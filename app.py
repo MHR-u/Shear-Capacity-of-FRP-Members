@@ -50,7 +50,7 @@ st.write("""
 - **ρᵧ (dimensionless)**: Longitudinal reinforcement ratio (input as percentage, e.g., 2 for 2%).
 - **fy (MPa)**: Yield strength of steel reinforcement (MPa).
 - **e (mm)**: Eccentricity in (mm).
-
+  
 ### Output:
 - **Vn**: Nominal shear strength of the section in kilo-Newtons (kN), calculated based on the provided parameters.
 """)
@@ -58,14 +58,14 @@ st.write("""
 # Inputs with tooltips
 st.write("Enter the following parameters:")
 
-b = st.number_input("b (mm):", min_value=89.0, max_value=1200.0, step=1.0, value=89.0, help="Width of the section (in mm).")
-d = st.number_input("d (mm):", min_value=73.0, max_value=889.0, step=1.0, value=73.0, help="Depth of the section (in mm).")
-a = st.number_input("a (mm):", min_value=180.0, max_value=3050.0, step=1.0, value=180.0, help="Shear span (in mm).")
-fc = st.number_input("fc (MPa):", min_value=0.6, max_value=93.0, step=0.1, value=19.2, help="Concrete compressive strength (in MPa).")
-roh_l_percent = st.number_input("ρᵧ (%)", min_value=0.11, max_value=4.12, step=0.01, value=0.11, help="Reinforcement ratio as a percentage (e.g., 2 for 0.02).")
+b = st.number_input("b (mm) [Min=89 - Max=1200]:", value=0.0, help="Width of the section (in mm).")
+d = st.number_input("d (mm) [Min=73 - Max=889]:", value=0.0, help="Depth of the section (in mm).")
+a = st.number_input("a (mm) [Min=180 - Max=3050]:", value=0.0, help="Shear span (in mm).")
+fc = st.number_input("fc (MPa) [Min=19.2 - Max=93]:", value=0.0, help="Concrete compressive strength (in MPa).")
+roh_l_percent = st.number_input("ρᵧ (%) [Min=0.11% - Max=4.12%]:", value=0.0, help="Reinforcement ratio as a percentage (e.g., 2 for 0.02).")
 roh_l = roh_l_percent  # Convert the percentage to dimensionless value
-fy = st.number_input("fy (MPa):", min_value=19.2, max_value=2840.0, step=0.1, value=19.2, help="Yield strength of steel (in MPa).")
-e = st.number_input("e (mm):", min_value=0.6, max_value=192.0, step=0.1, value=0.6, help="Eccentricity (in mm).")
+fy = st.number_input("fy (MPa) [Min=397 - Max=2840]:", value=0.0, help="Yield strength of steel (in MPa).")
+e = st.number_input("e (mm) [Min=24.8 - Max=192]:", value=0.0, help="Eccentricity (in mm).")
 
 # Allow the user to choose which variable to plot against Vn
 plot_variable = st.selectbox("Select a variable to plot against Vn:", ["b", "d", "a", "fc", "ρᵧ", "fy", "e"])
@@ -119,3 +119,4 @@ if st.button("Calculate Vn"):
 
     else:
         st.error("Please input valid values for all parameters.")
+        
