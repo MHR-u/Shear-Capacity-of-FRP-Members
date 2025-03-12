@@ -1,8 +1,6 @@
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
-from fpdf import FPDF
-import io
 
 # Function to calculate Vn based on the provided conditions
 def calculate_vn(b, d, a, fc, roh_l, fy, e):
@@ -39,35 +37,6 @@ def calculate_vn(b, d, a, fc, roh_l, fy, e):
     
     return Vn
 
-# Function to generate PDF report
-def generate_pdf_report(b, d, a, fc, roh_l, fy, e, Vn):
-    pdf = FPDF()
-    pdf.add_page()
-
-    pdf.set_auto_page_break(auto=True, margin=15)
-    pdf.set_font("Arial", size=12)
-    
-    pdf.cell(200, 10, txt="Vn Calculation Report", ln=True, align='C')
-    
-    pdf.ln(10)
-    pdf.cell(200, 10, txt=f"b (mm): {b}", ln=True)
-    pdf.cell(200, 10, txt=f"d (mm): {d}", ln=True)
-    pdf.cell(200, 10, txt=f"a (mm): {a}", ln=True)
-    pdf.cell(200, 10, txt=f"fc (MPa): {fc}", ln=True)
-    pdf.cell(200, 10, txt=f"ρᵧ (dimensionless): {roh_l:.4f}", ln=True)
-    pdf.cell(200, 10, txt=f"fy (MPa): {fy}", ln=True)
-    pdf.cell(200, 10, txt=f"e (mm): {e}", ln=True)
-    
-    pdf.ln(10)
-    pdf.cell(200, 10, txt=f"Calculated Vn: {Vn:.2f} kN", ln=True)
-    
-    # Save to in-memory buffer
-    pdf_output = io.BytesIO()
-    pdf.output(pdf_output)
-    pdf_output.seek(0)
-    
-    return pdf_output
-
 # Streamlit app interface
 st.set_page_config(page_title="Vn Calculator", page_icon="⚙️", layout="centered")
 st.title("⚙️ Vn Calculator")
@@ -78,7 +47,7 @@ st.write("""
 - **a (mm)**: Shear span of the concrete section in millimeters (distance from the center of gravity of the section to the point of load application).
 - **d (mm)**: Effective depth of the concrete section in millimeters (distance from the extreme compression fiber to the centroid of the tension reinforcement).
 - **fc (MPa)**: Concrete compressive strength in megapascals (MPa).
-- **ρᵧ (dimensionless)**: Reinforcement ratio, which is the ratio of the area of reinforcement to the area of concrete in the section (input as percentage, e.g., 2% means 2).
+- **ρᵧ (dimensionless)**: Reinforcement ratio, which is the ratio of the area of reinforcement to the area of concrete in the section (input as percentage, e.g., 2 for 2%).
 - **fy (MPa)**: Yield strength of steel reinforcement in megapascals (MPa).
 - **e (mm)**: Eccentricity (in mm), which is the distance from the center of the section to the point of application of an eccentric load.
   
@@ -93,7 +62,7 @@ b = st.number_input("b (mm):", value=0.0, help="Width of the section (in mm).")
 d = st.number_input("d (mm):", value=0.0, help="Depth of the section (in mm).")
 a = st.number_input("a (mm):", value=0.0, help="Shear span of the section (in mm).")
 fc = st.number_input("fc (MPa):", value=0.0, help="Concrete compressive strength (in MPa).")
-roh_l_percent = st.number_input("ρᵧ (%)", value=0.0, help="Reinforcement ratio as a percentage (e.g., 2 for 2%).")
+roh_l_percent = st.number_input("ρᵧ (%)", value=0.0, help="Reinforcement ratio as a percentage (e.g., 2 for 0.02).")
 roh_l = roh_l_percent  # Convert the percentage to dimensionless value
 fy = st.number_input("fy (MPa):", value=0.0, help="Yield strength of steel (in MPa).")
 e = st.number_input("e (mm):", value=0.0, help="Eccentricity (in mm).")
@@ -148,8 +117,6 @@ if st.button("Calculate Vn"):
         ax.legend()
         st.pyplot(fig)
 
-        # Create a downloadable PDF report
-        pdf_output = generate_pdf_report(b, d, a, fc, roh_l, fy, e, Vn)
-        st.download_button("Download PDF Report", pdf_output, file_name="Vn_Calculation_Report.pdf")
     else:
         st.error("Please input valid values for all parameters.")
+        
