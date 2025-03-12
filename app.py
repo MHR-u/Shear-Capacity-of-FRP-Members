@@ -44,8 +44,8 @@ st.title("⚙️ Joint Shear Capacity (Vn) Calculator")
 # Definitions
 st.write("""
 ### Definitions:
-- **a (mm)**: Shear span of the concrete section in millimeters.
-- **d (mm)**: Effective depth of the concrete section in millimeters.
+- **a (mm)**: Shear span of the concrete section in (mm).
+- **d (mm)**: Effective depth of the concrete section in (mm).
 - **fc (MPa)**: Concrete compressive strength (MPa).
 - **ρᵧ (dimensionless)**: Longitudinal reinforcement ratio (input as percentage, e.g., 2 for 2%).
 - **fy (MPa)**: Yield strength of steel reinforcement (MPa).
