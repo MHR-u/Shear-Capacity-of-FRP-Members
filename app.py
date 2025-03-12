@@ -49,7 +49,7 @@ st.write("""
 - **fc (MPa)**: Concrete compressive strength (MPa).
 - **ρᵧ (dimensionless)**: Longitudinal reinforcement ratio (input as percentage, e.g., 2 for 2%).
 - **fy (MPa)**: Yield strength of steel reinforcement (MPa).
-- **e (mm)**: Eccentricity (in mm).
+- **e (mm)**: Eccentricity in (mm).
   
 ### Output:
 - **Vn**: Nominal shear strength of the section in kilo-Newtons (kN), calculated based on the provided parameters.
