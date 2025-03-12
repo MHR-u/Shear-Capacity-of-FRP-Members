@@ -38,8 +38,8 @@ def calculate_vn(b, d, a, fc, roh_l, fy, e):
     return Vn
 
 # Streamlit app interface
-st.set_page_config(page_title="Vn Calculator", page_icon="⚙️", layout="centered")
-st.title("⚙️ Vn Calculator")
+st.set_page_config(page_title="Joint Shear Capacity (Vn) Calculator", page_icon="⚙️", layout="centered")
+st.title("⚙️ Joint Shear Capacity (Vn) Calculator")
 
 # Definitions
 st.write("""
