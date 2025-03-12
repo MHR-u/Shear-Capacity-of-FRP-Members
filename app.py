@@ -44,12 +44,12 @@ st.title("⚙️ Joint Shear Capacity (Vn) Calculator")
 # Definitions
 st.write("""
 ### Definitions:
-- **a (mm)**: Shear span of the concrete section in millimeters (distance from the center of gravity of the section to the point of load application).
-- **d (mm)**: Effective depth of the concrete section in millimeters (distance from the extreme compression fiber to the centroid of the tension reinforcement).
-- **fc (MPa)**: Concrete compressive strength in megapascals (MPa).
-- **ρᵧ (dimensionless)**: Reinforcement ratio, which is the ratio of the area of reinforcement to the area of concrete in the section (input as percentage, e.g., 2 for 2%).
-- **fy (MPa)**: Yield strength of steel reinforcement in megapascals (MPa).
-- **e (mm)**: Eccentricity (in mm), which is the distance from the center of the section to the point of application of an eccentric load.
+- **a (mm)**: Shear span of the concrete section in millimeters.
+- **d (mm)**: Effective depth of the concrete section in millimeters.
+- **fc (MPa)**: Concrete compressive strength (MPa).
+- **ρᵧ (dimensionless)**: Longitudinal reinforcement ratio (input as percentage, e.g., 2 for 2%).
+- **fy (MPa)**: Yield strength of steel reinforcement (MPa).
+- **e (mm)**: Eccentricity (in mm).
   
 ### Output:
 - **Vn**: Nominal shear strength of the section in kilo-Newtons (kN), calculated based on the provided parameters.
@@ -60,7 +60,7 @@ st.write("Enter the following parameters:")
 
 b = st.number_input("b (mm):", value=0.0, help="Width of the section (in mm).")
 d = st.number_input("d (mm):", value=0.0, help="Depth of the section (in mm).")
-a = st.number_input("a (mm):", value=0.0, help="Shear span of the section (in mm).")
+a = st.number_input("a (mm):", value=0.0, help="Shear span (in mm).")
 fc = st.number_input("fc (MPa):", value=0.0, help="Concrete compressive strength (in MPa).")
 roh_l_percent = st.number_input("ρᵧ (%)", value=0.0, help="Reinforcement ratio as a percentage (e.g., 2 for 0.02).")
 roh_l = roh_l_percent  # Convert the percentage to dimensionless value
