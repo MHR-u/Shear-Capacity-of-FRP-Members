@@ -43,13 +43,13 @@ st.set_page_config(
 )
 
 # Creating two columns
-col1, col2 = st.columns([3, 1])
+col1, col2 = st.columns([3, 2])
 
 with col1:
     st.title("Nominal Shear Strength (Vn) Calculator")
 
 with col2:
-    st.image("https://ars.els-cdn.com/content/image/1-s2.0-S2352012424006726-gr1.jpg", width=250)
+    st.image("https://ars.els-cdn.com/content/image/1-s2.0-S2352012424006726-gr1.jpg", width=400)
 
 
 # Definitions
