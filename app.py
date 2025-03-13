@@ -43,7 +43,7 @@ st.set_page_config(
 )
 
 # Displaying the image as part of the app interface
-st.image("https://ars.els-cdn.com/content/image/1-s2.0-S2352012424006726-gr1.jpg", width=100)
+st.image("https://ars.els-cdn.com/content/image/1-s2.0-S2352012424006726-gr1.jpg", width=400)
 st.title("Nominal Shear Strength (Vn) Calculator")
 
 
