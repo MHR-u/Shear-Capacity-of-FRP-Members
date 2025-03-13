@@ -95,7 +95,7 @@ st.markdown("""
 # Stylish header with title and image
 st.markdown("""
     <div class="title-container">
-        <div class="title-text">Nominal Shear Strength (Vn) Calculator</div>
+        <div class="title-text">Shear Capacity of FRP Members (Vn) Calculator</div>
         <div class="image-container">
             <img src="https://ars.els-cdn.com/content/image/1-s2.0-S2352012424006726-gr1.jpg" alt="Image">
         </div>
@@ -110,7 +110,7 @@ st.markdown("""
     <strong>Note:</strong>
     <ol>
         <li>The more accurate the output, the more inputs are within the MIN-MAX ranges shown.</li>
-        <li>Nominal Shear Strength of the section (Vn), calculated based on the provided parameters.</li>
+        <li>Shear Capacity of FRP Members (Vn), calculated based on the provided parameters.</li>
     </ol>
 </div>
 """, unsafe_allow_html=True)
