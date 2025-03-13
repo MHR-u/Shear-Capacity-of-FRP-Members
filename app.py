@@ -131,7 +131,7 @@ st.write("""
 """)
 
 # Inputs with tooltips
-st.write("Enter the following parameters:")
+st.write("### Enter the following parameters:")
 
 b = st.number_input("b (mm) [Min=89 - Max=1200]:", value=0.0, help="Section width in (mm).")
 d = st.number_input("d (mm) [Min=73 - Max=889]:", value=0.0, help="Effective depth in (mm).")
