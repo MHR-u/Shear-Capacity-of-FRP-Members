@@ -67,7 +67,7 @@ st.markdown("""
     <div class="title-container">
         <div class="title-text">Nominal Shear Strength (Vn) Calculator</div>
         <div class="image-container">
-            <img src="https://ars.els-cdn.com/content/image/1-s2.0-S2352012424006726-gr1.jpg" width="120">
+            <img src="https://ars.els-cdn.com/content/image/1-s2.0-S2352012424006726-gr1.jpg" width="300">
         </div>
     </div>
     <hr>
