@@ -43,7 +43,7 @@ st.set_page_config(
 )
 
 # Creating two columns
-col1, col2 = st.columns([3, 2])
+col1, col2 = st.columns([4, 1])
 
 with col1:
     st.title("Nominal Shear Strength (Vn) Calculator")
