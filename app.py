@@ -103,7 +103,7 @@ if st.button("Calculate Vn"):
             vn_values = [calculate_vn(b, d, a_val, a/d, f_c, roh_t, f_f, E_f) for a_val in variable_values]
         elif plot_variable == "a/d":
             variable_values = np.linspace(100, 500, 100)
-            vn_values = [calculate_vn(b, d, a, a/d_val, f_c, roh_t, f_f, E_f) for a/d_val in variable_values]
+            vn_values = [calculate_vn(b, d, a, a_d_val, f_c, roh_t, f_f, E_f) for a_d_val in variable_values]
         elif plot_variable == "f'_c":
             variable_values = np.linspace(5, 100, 100)
             vn_values = [calculate_vn(b, d, a, a/d, f_c_val, roh_t, f_f, E_f) for f_c_val in variable_values]
