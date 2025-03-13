@@ -36,8 +36,8 @@ def calculate_vn(b, d, a, a_d, fc, ρt, fƒ, Eƒ):
     return Vn
 
 # Streamlit app interface
-st.set_page_config(page_title="Nominal Shear Strength (Vn) Calculator", page_icon="⚙️", layout="centered")
-st.title("Nominal Shear Strength (Vn) Calculator")
+st.set_page_config(page_title="Nominal Shear Strength (Vn) Calculator", page_icon="https://ars.els-cdn.com/content/image/1-s2.0-S2352012424006726-gr1.jpg", layout="centered")
+st.title(" page_icon Nominal Shear Strength (Vn) Calculator")
 
 # Definitions
 st.write(""" 
