@@ -42,7 +42,7 @@ st.set_page_config(page_title="Shear Capacity (Vn) Calculator", page_icon="⚙�
 st.title("⚙️ Shear Capacity (Vn) Calculator")
 
 # Definitions
-st.write("""
+st.write(""" 
 ### Definitions:
 - **b**: Section width in (mm).
 - **a**: Shear span in (mm).
@@ -66,7 +66,7 @@ a = st.number_input("a (mm) [Min=180 - Max=3050]:", value=0.0, help="Shear span 
 ad = st.number_input("a/d (mm) [Min=2.47 - Max=3.43]:", value=0.0, help="Shear span in (mm).")
 f_c = st.number_input("f'_c (MPa) [Min=19.2 - Max=93]:", value=0.0, help="Concrete compressive strength in (MPa).")
 roh_t_percent = st.number_input("ρ_t (%) [Min=0.11% - Max=4.12%]:", value=0.0, help="Reinforcement ratio as a percentage (e.g., 2 for 0.02).")
-roh_t = roh_t_percent # Convert the percentage to dimensionless value
+roh_t = roh_t_percent / 100  # Convert the percentage to dimensionless value
 f_f = st.number_input("f_f (MPa) [Min=397 - Max=2840]:", value=0.0, help="FRP ultimate tensile strength in (MPa).")
 E_f = st.number_input("E_f (GPa) [Min=24.8 - Max=192]:", value=0.0, help="FRP Young's modulus in (GPa).")
 
@@ -99,7 +99,10 @@ if st.button("Calculate Vn"):
             vn_values = [calculate_vn(b, d, a_val, f_c, roh_t, f_f, E_f) for a_val in variable_values]
         elif plot_variable == "a/d":
             variable_values = np.linspace(2.47, 3.43, 100)
-            vn_values = [calculate_vn(b, d, a, f_c, roh_t, f_f, E_f) for a_d_val in variable_values]
+            vn_values = []
+            for a_d_val in variable_values:
+                a_fixed = a_d_val * d  # Calculate 'a' based on a/d ratio and d
+                vn_values.append(calculate_vn(b, d, a_fixed, f_c, roh_t, f_f, E_f))
         elif plot_variable == "f'_c":
             variable_values = np.linspace(5, 100, 100)
             vn_values = [calculate_vn(b, d, a, f_c_val, roh_t, f_f, E_f) for f_c_val in variable_values]
