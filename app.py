@@ -107,8 +107,10 @@ st.markdown("""
 # Stylish Note Section
 st.markdown("""
 <div class="note-box">
-    <strong>Note:</strong> The more accurate the output, the more inputs are within the MIN-MAX ranges shown.<br>
-    <strong>Vn:</strong> Nominal Shear Strength of the section in (kN), calculated based on the provided parameters.
+    <strong>Note:</strong> 
+- The more accurate the output, the more inputs are within the MIN-MAX ranges shown.<br>
+    <strong>Vn:</strong> 
+- Nominal Shear Strength of the section in (kN), calculated based on the provided parameters.
 </div>
 """, unsafe_allow_html=True)
 
