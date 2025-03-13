@@ -110,7 +110,7 @@ st.markdown("""
     <strong>Note:</strong>
     <ol>
         <li>The more accurate the output, the more inputs are within the MIN-MAX ranges shown.</li>
-        <li><strong>Vn:</strong> Nominal Shear Strength of the section in (kN), calculated based on the provided parameters.</li>
+        <li>Nominal Shear Strength of the section (Vn), calculated based on the provided parameters.</li>
     </ol>
 </div>
 """, unsafe_allow_html=True)
