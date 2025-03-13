@@ -103,16 +103,6 @@ st.markdown("""
     <hr>
 """, unsafe_allow_html=True)
 
-# Stylish header with title and image
-st.markdown("""
-    <div class="title-container">
-        <div class="title-text">Nominal Shear Strength (Vn) Calculator</div>
-        <div class="image-container">
-            <img src="https://ars.els-cdn.com/content/image/1-s2.0-S2352012424006726-gr1.jpg" width="400">
-        </div>
-    </div>
-    <hr>
-""", unsafe_allow_html=True)
 
 # Stylish Note Section
 st.markdown("""
