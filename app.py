@@ -47,31 +47,73 @@ st.set_page_config(
 # Custom CSS for styling
 st.markdown("""
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f6;
+        }
         .title-container {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
         .title-text {
             font-size: 2.2rem;
             font-weight: bold;
+            margin-right: 10px;
         }
         .image-container {
             margin-top: 10px;
         }
+        .note-box {
+            background-color: #e0f7fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+        }
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #ddd;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
     </style>
 """, unsafe_allow_html=True)
 
-# Creating a stylish header with an image on the right
+# Stylish header with title and image
 st.markdown("""
     <div class="title-container">
         <div class="title-text">Nominal Shear Strength (Vn) Calculator</div>
         <div class="image-container">
-            <img src="https://ars.els-cdn.com/content/image/1-s2.0-S2352012424006726-gr1.jpg" width="300">
+            <img src="https://ars.els-cdn.com/content/image/1-s2.0-S2352012424006726-gr1.jpg" width="120">
         </div>
     </div>
     <hr>
 """, unsafe_allow_html=True)
+
+# Stylish Note Section
+st.markdown("""
+<div class="note-box">
+    <strong>Note:</strong> The more accurate the output, the more inputs are within the MIN-MAX ranges shown.<br>
+    <strong>Vn:</strong> Nominal Shear Strength of the section in (kN), calculated based on the provided parameters.
+</div>
+""", unsafe_allow_html=True)
+
+# Example input fields (Just to demonstrate styling)
+b = st.number_input("Width of the section (b) in mm", min_value=100, max_value=300, value=150)
+d = st.number_input("Effective depth of the section (d) in mm", min_value=200, max_value=800, value=400)
+a = st.number_input("Shear span (a) in mm", min_value=50, max_value=400, value=200)
+
+# Example output
+if st.button("Calculate Vn"):
+    Vn = b * d * 0.1  # Just a placeholder calculation
+    st.success(f"Calculated Nominal Shear Strength (Vn): {Vn:.2f} kN")
 
 
 
