@@ -110,7 +110,7 @@ st.markdown("""
     <strong>Note:</strong>
     <ol>
         <li>The shear capacity of FRP members (Vn) is determined based on the parameters provided below.</li>
-        <li>The accuracy of the output increases as the input values remain within the specified MIN-MAX ranges.</li>
+        <li>The accuracy of the output increases as input values remain within the specified MIN-MAX ranges.</li>
     </ol>
 </div>
 """, unsafe_allow_html=True)
