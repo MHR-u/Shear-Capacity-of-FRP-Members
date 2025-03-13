@@ -42,9 +42,14 @@ st.set_page_config(
     layout="centered"
 )
 
-# Displaying the image as part of the app interface
-st.image("https://ars.els-cdn.com/content/image/1-s2.0-S2352012424006726-gr1.jpg", width=400)
-st.title("Nominal Shear Strength (Vn) Calculator")
+# Creating two columns
+col1, col2 = st.columns([3, 1])
+
+with col1:
+    st.title("Nominal Shear Strength (Vn) Calculator")
+
+with col2:
+    st.image("https://ars.els-cdn.com/content/image/1-s2.0-S2352012424006726-gr1.jpg", width=250)
 
 
 # Definitions
