@@ -36,20 +36,43 @@ def calculate_vn(b, d, a, a_d, fc, ρt, fƒ, Eƒ):
     return Vn
 
 # Streamlit app interface
+import streamlit as st
+
 st.set_page_config(
     page_title="Nominal Shear Strength (Vn) Calculator",
     page_icon="https://ars.els-cdn.com/content/image/1-s2.0-S2352012424006726-gr1.jpg",
     layout="centered"
 )
 
-# Creating two columns
-col1, col2 = st.columns([4, 1])
+# Custom CSS for styling
+st.markdown("""
+    <style>
+        .title-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .title-text {
+            font-size: 2.2rem;
+            font-weight: bold;
+        }
+        .image-container {
+            margin-top: 10px;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
-with col1:
-    st.title("Nominal Shear Strength (Vn) Calculator")
+# Creating a stylish header with an image on the right
+st.markdown("""
+    <div class="title-container">
+        <div class="title-text">Nominal Shear Strength (Vn) Calculator</div>
+        <div class="image-container">
+            <img src="https://ars.els-cdn.com/content/image/1-s2.0-S2352012424006726-gr1.jpg" width="120">
+        </div>
+    </div>
+    <hr>
+""", unsafe_allow_html=True)
 
-with col2:
-    st.image("https://ars.els-cdn.com/content/image/1-s2.0-S2352012424006726-gr1.jpg", width=400)
 
 
 # Definitions
