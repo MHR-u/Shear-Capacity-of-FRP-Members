@@ -72,7 +72,7 @@ f_f = st.number_input("f_f (MPa) [Min=397 - Max=2840]:", value=0.0, help="FRP ul
 E_f = st.number_input("E_f (GPa) [Min=24.8 - Max=192]:", value=0.0, help="FRP Young's modulus in (GPa).")
 
 # Allow the user to choose which variable to plot against Vn
-plot_variable = st.selectbox("Select a variable to plot against Vn:", ["b", "d", "a", "f'_c", "ρ_t", "f_f", "E_f"])
+plot_variable = st.selectbox("Select a variable to plot against Vn:", ["b", "d", "a", "a/d", "f'_c", "ρ_t", "f_f", "E_f"])
 
 # Convert Vn to N or kN
 convert_units = st.radio("Convert Vn to:", ('kN', 'N'))
@@ -91,28 +91,28 @@ if st.button("Calculate Vn"):
         # Plotting Vn against the selected variable
         if plot_variable == "b":
             variable_values = np.linspace(100, 500, 100)
-            vn_values = [calculate_vn(b_val, d, a, a/d, f_c, roh_t, f_f, E_f) for b_val in variable_values]
+            vn_values = [calculate_vn(b_val, d, a, a_d, f_c, roh_t, f_f, E_f) for b_val in variable_values]
         elif plot_variable == "d":
             variable_values = np.linspace(100, 500, 100)
-            vn_values = [calculate_vn(b, d_val, a, a/d, f_c, roh_t, f_f, E_f) for d_val in variable_values]
+            vn_values = [calculate_vn(b, d_val, a, a_d, f_c, roh_t, f_f, E_f) for d_val in variable_values]
         elif plot_variable == "a":
             variable_values = np.linspace(100, 500, 100)
-            vn_values = [calculate_vn(b, d, a_val, a/d, f_c, roh_t, f_f, E_f) for a_val in variable_values]
+            vn_values = [calculate_vn(b, d, a_val, a_d, f_c, roh_t, f_f, E_f) for a_val in variable_values]
         elif plot_variable == "a/d":
             variable_values = np.linspace(100, 500, 100)
-            vn_values = [calculate_vn(b, d, a, a/d_val, f_c, roh_t, f_f, E_f) for a/d_val in variable_values]
+            vn_values = [calculate_vn(b, d, a, a_d_val, f_c, roh_t, f_f, E_f) for a_d_val in variable_values]
         elif plot_variable == "f'_c":
             variable_values = np.linspace(5, 100, 100)
-            vn_values = [calculate_vn(b, d, a, a/d, f_c_val, roh_t, f_f, E_f) for f_c_val in variable_values]
+            vn_values = [calculate_vn(b, d, a, a_d, f_c_val, roh_t, f_f, E_f) for f_c_val in variable_values]
         elif plot_variable == "ρ_t":
             variable_values = np.linspace(0.1, 2, 100)
-            vn_values = [calculate_vn(b, d, a, a/d, f_c, roh_t_val, f_f, E_f) for roh_t_val in variable_values]
+            vn_values = [calculate_vn(b, d, a, a_d, f_c, roh_t_val, f_f, E_f) for roh_t_val in variable_values]
         elif plot_variable == "f_f":
             variable_values = np.linspace(100, 600, 100)
-            vn_values = [calculate_vn(b, d, a, a/d, f_c, roh_t, f_f_val, E_f) for f_f_val in variable_values]
+            vn_values = [calculate_vn(b, d, a, a_d, f_c, roh_t, f_f_val, E_f) for f_f_val in variable_values]
         elif plot_variable == "E_f":
             variable_values = np.linspace(10, 200, 100)
-            vn_values = [calculate_vn(b, d, a, a/d, f_c, roh_t, f_f, E_f_val) for E_f_val in variable_values]
+            vn_values = [calculate_vn(b, d, a, a_d, f_c, roh_t, f_f, E_f_val) for E_f_val in variable_values]
         
         if convert_units == 'N':
             vn_values = [vn * 1000 for vn in vn_values]  # Convert to N for graph
