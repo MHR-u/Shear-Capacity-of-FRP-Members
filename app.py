@@ -39,7 +39,7 @@ def calculate_vn(b, d, a, a_d, fc, ρt, fƒ, Eƒ):
 import streamlit as st
 
 st.set_page_config(
-    page_title="Nominal Shear Strength (Vn) Calculator",
+    page_title="Shear Capacity of FRP Members (Vn) Calculator",
     page_icon="https://ars.els-cdn.com/content/image/1-s2.0-S2352012424006726-gr1.jpg",
     layout="centered"
 )
