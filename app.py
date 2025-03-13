@@ -50,8 +50,8 @@ st.write("""
 - **a/d**: Shear span-to-effective depth ratio (dimensionless).
 - **f&#8242;c**: Concrete compressive strength in (MPa).
 - **ρ&#8290;t**: FRP longitudinal reinforcement ratio (input as percentage, e.g., 2 for 2%).
-- **f**: FRP ultimate tensile strength in (MPa).
-- **E**: FRP Young's modulus in (GPa).
+- **f<sub>f</sub>**: FRP ultimate tensile strength in (MPa).
+- **E<sub>f</sub>**: FRP Young's modulus in (GPa).
   
 ### Output:
 - **Vn**: Nominal shear strength of the section in kilo-Newtons (kN), calculated based on the provided parameters.
