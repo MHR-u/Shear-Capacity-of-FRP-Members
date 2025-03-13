@@ -49,7 +49,7 @@ st.write("""
 - **d**: Effective depth in (mm).
 - **a/d**: Shear span-to-effective depth ratio (dimensionless).
 - **f'_c**: Concrete compressive strength in (MPa).
-- **ρ_t**: FRP longitudinal reinforcement ratio (input as percentage, e.g., 2 for 2%).
+- **ρₜ**: FRP longitudinal reinforcement ratio (input as percentage, e.g., 2 for 2%).
 - **f_f**: FRP ultimate tensile strength in (MPa).
 - **E_f**: FRP Young's modulus in (GPa).
   
@@ -64,7 +64,7 @@ b = st.number_input("b (mm) [Min=89 - Max=1200]:", value=0.0, help="Section widt
 d = st.number_input("d (mm) [Min=73 - Max=889]:", value=0.0, help="Effective depth in (mm).")
 a = st.number_input("a (mm) [Min=180 - Max=3050]:", value=0.0, help="Shear span in (mm).")
 
-# Calculate and display a/d automatically
+# Calculate and display a/d automatically (no input for a/d)
 if a > 0 and d > 0:
     a_d = a / d
     st.write(f"**a/d (automatically calculated):** {a_d:.2f}")
@@ -72,13 +72,13 @@ else:
     st.write("**a/d (automatically calculated):** Please enter valid values for 'a' and 'd'.")
 
 f_c = st.number_input("f'_c (MPa) [Min=19.2 - Max=93]:", value=0.0, help="Concrete compressive strength in (MPa).")
-roh_t_percent = st.number_input("ρ_t (%) [Min=0.11% - Max=4.12%]:", value=0.0, help="Reinforcement ratio as a percentage (e.g., 2 for 0.02).")
+roh_t_percent = st.number_input("ρₜ (%) [Min=0.11% - Max=4.12%]:", value=0.0, help="Reinforcement ratio as a percentage (e.g., 2 for 0.02).")
 roh_t = roh_t_percent / 100  # Convert the percentage to dimensionless value
 f_f = st.number_input("f_f (MPa) [Min=397 - Max=2840]:", value=0.0, help="FRP ultimate tensile strength in (MPa).")
 E_f = st.number_input("E_f (GPa) [Min=24.8 - Max=192]:", value=0.0, help="FRP Young's modulus in (GPa).")
 
 # Allow the user to choose which variable to plot against Vn
-plot_variable = st.selectbox("Select a variable to plot against Vn:", ["b", "d", "a", "f'_c", "ρ_t", "f_f", "E_f"])
+plot_variable = st.selectbox("Select a variable to plot against Vn:", ["b", "d", "a", "f'_c", "ρₜ", "f_f", "E_f"])
 
 # Convert Vn to N or kN
 convert_units = st.radio("Convert Vn to:", ('kN', 'N'))
@@ -107,7 +107,7 @@ if st.button("Calculate Vn"):
         elif plot_variable == "f'_c":
             variable_values = np.linspace(5, 100, 100)
             vn_values = [calculate_vn(b, d, a, f_c_val, roh_t, f_f, E_f) for f_c_val in variable_values]
-        elif plot_variable == "ρ_t":
+        elif plot_variable == "ρₜ":
             variable_values = np.linspace(0.1, 2, 100)
             vn_values = [calculate_vn(b, d, a, f_c, roh_t_val, f_f, E_f) for roh_t_val in variable_values]
         elif plot_variable == "f_f":
