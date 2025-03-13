@@ -51,8 +51,9 @@ st.write("""
 - **fƒ**: FRP ultimate tensile strength in (MPa).
 - **Eƒ**: FRP Young's modulus in (GPa).
   
-### Output:
-- **Vn**: Nominal shear strength of the section in kilo-Newtons (kN), calculated based on the provided parameters.
+### Note:
+- **The more accurate the output, the more inputs are within the MIN-MAX ranges shown.**
+- **Vn**: Nominal Shear Strength of the section in (kN), calculated based on the provided parameters.
 """)
 
 # Inputs with tooltips
