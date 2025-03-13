@@ -68,7 +68,7 @@ f_f = st.number_input("fƒ (MPa) [Min=397 - Max=2840]:", value=0.0, help="FRP ul
 E_f = st.number_input("Eƒ (GPa) [Min=24.8 - Max=192]:", value=0.0, help="FRP Young's modulus in (GPa).")
 
 # Allow the user to choose which variable to plot against Vn
-plot_variable = st.selectbox("Select a variable to plot against Vn:", ["b", "d", "a", "a/d", "f'c", "ρt", "fƒ", "Eƒ"])
+plot_variable = st.selectbox("Select a variable to plot against Vn:", ["b", "d", "a", "a_d", "f_c", "roh_t", "f_f", "E_f"])
 
 # Convert Vn to N or kN
 convert_units = st.radio("Convert Vn to:", ('kN', 'N'))
