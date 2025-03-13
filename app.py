@@ -53,20 +53,26 @@ st.markdown("""
         }
         .title-container {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
             background-color: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
         .title-text {
             font-size: 2.2rem;
             font-weight: bold;
-            margin-right: 10px;
+            text-align: center;
+            margin-bottom: 20px;
         }
-        .image-container {
+        .image-container img {
+            width: 100%;
+            max-width: 1200px;  /* Adjust the max-width for your image */
+            height: auto;
             margin-top: 10px;
+            border-radius: 10px;
         }
         .note-box {
             background-color: #e0f7fa;
@@ -84,6 +90,17 @@ st.markdown("""
             margin-bottom: 20px;
         }
     </style>
+""", unsafe_allow_html=True)
+
+# Stylish header with title and image
+st.markdown("""
+    <div class="title-container">
+        <div class="title-text">Nominal Shear Strength (Vn) Calculator</div>
+        <div class="image-container">
+            <img src="https://ars.els-cdn.com/content/image/1-s2.0-S2352012424006726-gr1.jpg" alt="Image">
+        </div>
+    </div>
+    <hr>
 """, unsafe_allow_html=True)
 
 # Stylish header with title and image
