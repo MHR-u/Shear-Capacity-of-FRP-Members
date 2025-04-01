@@ -36,11 +36,9 @@ def calculate_vn(b, d, a, a_d, fc, ρt, fƒ, Eƒ):
     return Vn
 
 # Streamlit app interface
-import streamlit as st
-
 st.set_page_config(
     page_title="Shear Capacity of FRP-RC Members (Vn) Calculator",
-    page_icon="https://github.com/MHR-u/Shear-Capacity-of-FRP-Members/blob/main/FRP.png",
+    page_icon="https://raw.githubusercontent.com/MHR-u/Shear-Capacity-of-FRP-Members/main/FRP.png",
     layout="wide"
 )
 
@@ -69,35 +67,21 @@ st.markdown("""
         }
         .image-container img {
             width: 100%;
-            max-width: 1200px;  /* Adjust the max-width for your image */
+            max-width: 1200px;
             height: auto;
             margin-top: 10px;
             border-radius: 10px;
         }
-        .note-box {
-            background-color: #e0f7fa;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-        }
-        hr {
-            border: none;
-            height: 1px;
-            background-color: #ddd;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
     </style>
 """, unsafe_allow_html=True)
 
+
 # Stylish header with title and image
-st.markdown("""
+st.markdown(f"""
     <div class="title-container">
-        <div class="title-text">Shear Capacity of FRP-RC Members (Vn)</div>
+        <div class="title-text">Shear Capacity of FRP Members (Vn)</div>
         <div class="image-container">
-            <img src="https://github.com/MHR-u/Shear-Capacity-of-FRP-Members/blob/main/FRP.png" alt="Image">
+            <img src="https://raw.githubusercontent.com/MHR-u/Shear-Capacity-of-FRP-Members/main/FRP.png" alt="Image">
         </div>
     </div>
     <hr>
