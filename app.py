@@ -40,7 +40,7 @@ import streamlit as st
 
 st.set_page_config(
     page_title="Shear Capacity of FRP Members (Vn) Calculator",
-    page_icon="https://ars.els-cdn.com/content/image/1-s2.0-S2352012424006726-gr1.jpg",
+    page_icon="https://github.com/MHR-u/Shear-Capacity-of-FRP-Members/blob/main/FRP.png",
     layout="centered"
 )
 
@@ -97,7 +97,7 @@ st.markdown("""
     <div class="title-container">
         <div class="title-text">Shear Capacity of FRP Members (Vn)</div>
         <div class="image-container">
-            <img src="https://ars.els-cdn.com/content/image/1-s2.0-S2352012424006726-gr1.jpg" alt="Image">
+            <img src="https://github.com/MHR-u/Shear-Capacity-of-FRP-Members/blob/main/FRP.png" alt="Image">
         </div>
     </div>
     <hr>
