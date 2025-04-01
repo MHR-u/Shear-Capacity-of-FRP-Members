@@ -95,7 +95,7 @@ st.markdown("""
 # Stylish header with title and image
 st.markdown("""
     <div class="title-container">
-        <div class="title-text">Shear Capacity of FRP Members (Vn)</div>
+        <div class="title-text">Shear Capacity of FRP-RC Members (Vn)</div>
         <div class="image-container">
             <img src="https://github.com/MHR-u/Shear-Capacity-of-FRP-Members/blob/main/FRP.png" alt="Image">
         </div>
@@ -109,7 +109,7 @@ st.markdown("""
 <div class="note-box">
     <strong>Note:</strong>
     <ol>
-        <li>The shear capacity of FRP members (Vn) is determined based on the parameters provided below.</li>
+        <li>The shear capacity of FRP-RC members (Vn) is determined based on the parameters provided below.</li>
         <li>The accuracy of the output increases as the input values remain within the specified MIN-MAX ranges.</li>
     </ol>
 </div>
