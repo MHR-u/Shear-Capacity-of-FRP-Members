@@ -73,7 +73,7 @@ st.markdown("""
             border-radius: 10px;
         }
                 .note-box {
-            background-color: #e0f7fa;
+            background-color: #d4edda;
             padding: 15px;
             border-radius: 10px;
             margin-top: 20px;
