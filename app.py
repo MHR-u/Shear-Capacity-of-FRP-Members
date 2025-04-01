@@ -72,6 +72,22 @@ st.markdown("""
             margin-top: 10px;
             border-radius: 10px;
         }
+                .note-box {
+            background-color: #e0f7fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+        }
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #ddd;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
     </style>
 """, unsafe_allow_html=True)
 
