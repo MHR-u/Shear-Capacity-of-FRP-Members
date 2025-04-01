@@ -200,7 +200,7 @@ st.write("""
 ### Researchers:
 **Wissam Nadir<sup>1</sup>**, **Iman Kattoof Harith<sup>1</sup>**, **Akram Jawdhari<sup>2</sup>**, **Maher K. Abbas<sup>1</sup>**, **Mustafa Kareem Moosa<sup>3</sup>**
 
-<sup>1</sup> Civil Engineering Department, College of Engineering, Al-Qasim Green University, Babylon, 51013, Iraq.
-<sup>2</sup> Department of Civil & Environmental Engineering, South Dakota State University, Brookings, SD 57007, USA.
-<sup>3</sup> College of Engineering, University of Babylon, Babylon, 51002, Iraq.
+<sup>1</sup>Civil Engineering Department, College of Engineering, Al-Qasim Green University, Babylon, 51013, Iraq. 
+<sup>2</sup>Department of Civil & Environmental Engineering, South Dakota State University, Brookings, SD 57007, USA. 
+<sup>3</sup>College of Engineering, University of Babylon, Babylon, 51002, Iraq.
 """, unsafe_allow_html=True)
