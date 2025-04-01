@@ -198,8 +198,7 @@ if st.button("Calculate Vn"):
         st.error("Please input valid values for all parameters.")
 st.write("""
 ### Researchers:
-**Wissam Nadir<sup>1</sup>**, **Iman Kattoof Harith<sup>1</sup>**, **Akram Jawdhari<sup>2</sup>**,  
-**Maher K. Abbas<sup>1</sup>**, **Mustafa Kareem Moosa<sup>3</sup>**
+**Wissam Nadir<sup>1</sup>**, **Iman Kattoof Harith<sup>1</sup>**, **Akram Jawdhari<sup>2</sup>**, **Maher K. Abbas<sup>1</sup>**, **Mustafa Kareem Moosa<sup>3</sup>**
 
 <sup>1</sup> Civil Engineering Department, College of Engineering, Al-Qasim Green University, 51002 Hillah, Babylon, Iraq.  
 <sup>2</sup> Department of Civil & Environmental Engineering, South Dakota State University, Brookings, SD 57007, USA.  
