@@ -196,7 +196,7 @@ if st.button("Calculate Vn"):
 
     else:
         st.error("Please input valid values for all parameters.")
-st.markdown("""
+st.write("""
 ### Researchers:
 **Wissam Nadir<sup>1</sup>**, **Iman Kattoof Harith<sup>1</sup>**, **Akram Jawdhari<sup>2</sup>**,  
 **Maher K. Abbas<sup>1</sup>**, **Mustafa Kareem Moosa<sup>3</sup>**
