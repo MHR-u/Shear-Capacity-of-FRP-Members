@@ -39,9 +39,9 @@ def calculate_vn(b, d, a, a_d, fc, ρt, fƒ, Eƒ):
 import streamlit as st
 
 st.set_page_config(
-    page_title="Shear Capacity of FRP Members (Vn) Calculator",
+    page_title="Shear Capacity of FRP-RC Members (Vn) Calculator",
     page_icon="https://github.com/MHR-u/Shear-Capacity-of-FRP-Members/blob/main/FRP.png",
-    layout="centered"
+    layout="wide"
 )
 
 # Custom CSS for styling
