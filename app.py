@@ -39,7 +39,7 @@ def calculate_vn(b, d, a, a_d, fc, ρt, fƒ, Eƒ):
 st.set_page_config(
     page_title="Shear Capacity of FRP-RC Members (Vn) Calculator",
     page_icon="https://raw.githubusercontent.com/MHR-u/Shear-Capacity-of-FRP-Members/main/FRP.png",
-    layout="wide"
+    layout="centered"
 )
 
 # Custom CSS for styling
@@ -79,7 +79,7 @@ st.markdown("""
 # Stylish header with title and image
 st.markdown(f"""
     <div class="title-container">
-        <div class="title-text">Shear Capacity of FRP Members (Vn)</div>
+        <div class="title-text">Shear Capacity of FRP-RC Members (Vn)</div>
         <div class="image-container">
             <img src="https://raw.githubusercontent.com/MHR-u/Shear-Capacity-of-FRP-Members/main/FRP.png" alt="Image">
         </div>
@@ -98,7 +98,6 @@ st.markdown("""
     </ol>
 </div>
 """, unsafe_allow_html=True)
-
 
 
 # Definitions
